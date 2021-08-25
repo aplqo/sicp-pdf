@@ -4,8 +4,8 @@
 @settitle            Structure and Interpretation of Computer Programs, 2e
 @comment             Unofficial Texinfo Format
 @comment
-@set utfversion      2.andresraba5.6
-@set utfversiondate  February 2, 2016
+@set utfversion      2.aplqo1
+@set utfversiondate  August 25, 2021
 @comment
 @comment             This file is licensed under a Creative Commons
 @comment             Attribution-ShareAlike 4.0 International License
@@ -80,6 +80,9 @@
 @comment   Improved microtypography in code listings. Removed manual
 @comment   word breaks. Fixed broken links.
 @comment
+@comment * Version 2.aplqo1 (August 25, 2021).
+@comment   Change page size to A4. Replace old font commands. Change source 
+@comment   font, documentclass. Increase tocdepth. Add number to bookmarks.
 
 
 \frontmatter
