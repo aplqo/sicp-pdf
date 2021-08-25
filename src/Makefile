@@ -4,14 +4,14 @@
 FIG := $(patsubst %.svg,%.pdf,$(wildcard fig/*/*.svg))
 DIR := $(shell pwd)
 
-all: sicp.pdf
+all: sicp-blue.pdf sicp-orig.pdf
 
-sicp.pdf: sicp.tex exercises.tex figures.tex coverpage.pdf ${FIG}
+sicp-%.pdf: sicp-%.tex exercises.tex figures.tex coverpage.pdf ${FIG}
 	latexmk $<;
-	mv sicp.pdf ..
+	mv $@ ..
 
-sicp.tex: sicp.texi preamble.tex postamble.tex texi-to-latex.pl
-	./texi-to-latex.pl $<
+sicp-%.tex: preamble-%.tex sicp.texi postamble.tex texi-to-latex.pl
+	./texi-to-latex.pl -o $@ -p $< sicp.texi
 
 exercises.tex figures.tex: ex-fig-ref.pl
 	./ex-fig-ref.pl -e > exercises.tex; \
@@ -24,6 +24,6 @@ clean:
 	latexmk -CA
 
 clean-all: clean
-	${RM} ${FIG} sicp.tex exercises.tex figures.tex coverpage.pdf
+	${RM} ${FIG} sicp-orig.tex sicp-blue.tex  exercises.tex figures.tex coverpage.pdf
 
 .PHONY: all clean clean-all

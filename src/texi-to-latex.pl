@@ -22,13 +22,15 @@ use warnings;
 use autodie;
 use Getopt::Std;
 
+use vars qw($opt_o $opt_p);
+getopts('o:p:');
 
 # Sentinel to trigger Latex mode in code listings:
 my $textrigger = '~'; 
 
 # Latex preamble containing declarations 
 # and ending with \begin{document}
-my $preamble = swallow('preamble.tex');
+my $preamble = swallow($opt_p);
 
 # Postamble containing \end{document} etc.
 my $postamble = swallow('postamble.tex');
@@ -471,10 +473,6 @@ sub pour {
   print $fh $string;
   close $fh;
 }
-
-# Get optional output filename
-our($opt_o);
-getopt('o');
 
 my ($texifile, $texistring);
 
