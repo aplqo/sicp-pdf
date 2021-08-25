@@ -1014,7 +1014,7 @@ their programs.  Well-designed computational systems, like well-designed
 automobiles or nuclear reactors, are designed in a modular manner, so that the
 parts can be constructed, replaced, and debugged separately.
 
-@subsubheading Programming in Lisp
+@subsubsection Programming in Lisp
 
 We need an appropriate language for describing processes, and we will use for
 this purpose the programming language Lisp.  Just as our everyday thoughts are
@@ -1767,7 +1767,7 @@ See @ref{Stoy 1977} for a careful discussion of substitution.}
 
 @end itemize
 
-@subsubheading Applicative order versus normal order
+@subsubsection Applicative order versus normal order
 
 According to the description of evaluation given in @ref{1.1.3}, the
 interpreter first evaluates the operator and operands and then applies the
@@ -2449,7 +2449,7 @@ procedure may not have written the procedure themselves, but may have obtained
 it from another programmer as a black box.  A user should not need to know how
 the procedure is implemented in order to use it.
 
-@subsubheading Local names
+@subsubsection Local names
 
 One detail of a procedure's implementation that should not matter to the user
 of the procedure is the implementer's choice of names for the procedure's
@@ -2520,7 +2520,7 @@ the symbol @code{abs} names a procedure for computing the absolute value of a
 number.  @code{good-enough?} will compute a different function if we substitute
 @code{cos} for @code{abs} in its definition.
 
-@subsubheading Internal definitions and block structure
+@subsubsection Internal definitions and block structure
 
 We have one kind of name isolation available to us so far: The formal
 parameters of a procedure are local to the body of the procedure.  The
@@ -3137,7 +3137,7 @@ definition of the Fibonacci sequence.  To formulate the iterative algorithm
 required noticing that the computation could be recast as an iteration with
 three state variables.
 
-@subsubheading Example: Counting change
+@subsubsection Example: Counting change
 
 It takes only a bit of cleverness to come up with the iterative Fibonacci
 algorithm.  In contrast, consider the following problem: How many different
@@ -3784,7 +3784,7 @@ This section describes two methods for checking the primality of an integer
 The exercises at the end of this section suggest programming projects based on
 these algorithms.
 
-@subsubheading Searching for divisors
+@subsubsection Searching for divisors
 
 Since ancient times, mathematicians have been fascinated by problems concerning
 prime numbers, and many people have worked on the problem of determining ways
@@ -3822,7 +3822,7 @@ between 1 and @math{\sqrt{n}}.  Consequently, the number of steps required
 to identify @math{n} as prime will have order of growth
 @math{\Theta(\sqrt{n})}.
 
-@subsubheading The Fermat test
+@subsubsection The Fermat test
 
 The @math{\Theta(\log n)} primality test is based on a result from
 number theory known as Fermat's Little Theorem.@footnote{Pierre de Fermat
@@ -3919,7 +3919,7 @@ otherwise.
         (else false)))
 @end lisp
 
-@subsubheading Probabilistic methods
+@subsubsection Probabilistic methods
 
 The Fermat test differs in character from most familiar algorithms, in which
 one computes an answer that is guaranteed to be correct.  Here, the answer
@@ -4619,7 +4619,7 @@ notions of function
 and function application.  The λ-calculus has become a basic tool
 for mathematical investigations of the semantics of programming languages.}
 
-@subsubheading Using @code{let} to create local variables
+@subsubsection Using @code{let} to create local variables
 
 Another use of @code{lambda} is in creating local variables.  We often need
 local variables in our procedures other than those that have been bound as
@@ -4835,7 +4835,7 @@ we discuss two more elaborate examples---general methods for finding zeros and
 fixed points of functions---and show how these methods can be expressed
 directly as procedures.
 
-@subsubheading Finding roots of equations by the half-interval method
+@subsubsection Finding roots of equations by the half-interval method
 
 The @newterm{half-interval method} is a simple but powerful technique for
 finding roots of an equation @math{f(x) = 0}, where @math{f} is a continuous
@@ -4934,7 +4934,7 @@ the equation @math{x^3 - 2x - 3 = 0} between 1 and 2:
 @i{1.89306640625}
 @end lisp
 
-@subsubheading Finding fixed points of functions
+@subsubsection Finding fixed points of functions
 
 A number @math{x} is called a @newterm{fixed point} of a function @math{f} if @math{x}
 satisfies the equation @math{f(x) = x}.  For some functions @math{f} we can
@@ -5241,7 +5241,7 @@ square-root procedure to one that extracts cube roots:@footnote{See
                1.0))
 @end lisp
 
-@subsubheading Newton's method
+@subsubsection Newton's method
 
 When we first introduced the square-root procedure, in @ref{1.1.7}, we
 mentioned that this was a special case of @newterm{Newton's method}.  If @math{x
@@ -5350,7 +5350,7 @@ This provides yet another form of the square-root procedure:
    (lambda (y) (- (square y) x)) 1.0))
 @end lisp
 
-@subsubheading Abstractions and first-class procedures
+@subsubsection Abstractions and first-class procedures
 
 We've seen two ways to express the square-root computation as an instance of a
 more general method, once as a fixed-point search and once using Newton's
@@ -5867,7 +5867,7 @@ and constructor procedures @code{numer}, @code{denom}, and @code{make-rat}.
 But we haven't yet defined these.  What we need is some way to glue together a
 numerator and a denominator to form a rational number.
 
-@subsubheading Pairs
+@subsubsection Pairs
 
 To enable us to implement the concrete level of our data abstraction, our
 language provides a compound structure called a @newterm{pair}, which can be
@@ -5916,7 +5916,7 @@ only glue we need.  Data objects constructed from pairs are called
 
 \enlargethispage{\baselineskip}
 
-@subsubheading Representing rational numbers
+@subsubsection Representing rational numbers
 
 Pairs offer a natural way to complete the rational-number system.  Simply
 represent a rational number as a pair of two integers: a numerator and a
@@ -6837,7 +6837,7 @@ standardization brawls, would like to avoid the entire issue.  Once we have
 introduced quotation in @ref{2.3}, we will denote the empty list as
 @code{'()} and dispense with the variable @code{nil} entirely.}
 
-@subsubheading List operations
+@subsubsection List operations
 
 The use of pairs to represent sequences of elements as lists is accompanied by
 conventional programming techniques for manipulating lists by successively
@@ -7084,7 +7084,7 @@ even-odd parity as the first argument.  For example,
 @end lisp
 @end quotation
 
-@subsubheading Mapping over lists
+@subsubsection Mapping over lists
 
 One extremely useful operation is to apply some transformation to each element
 in a list and generate the list of results.  For instance, the following
@@ -7536,7 +7536,7 @@ representation?
 @end enumerate
 @end quotation
 
-@subsubheading Mapping over trees
+@subsubsection Mapping over trees
 
 Just as @code{map} is a powerful abstraction for dealing with sequences,
 @code{map} together with recursion is a powerful abstraction for dealing with
@@ -7763,7 +7763,7 @@ the map, the filter, and the accumulation.  If we could organize our programs
 to make the signal-flow structure manifest in the procedures we write, this
 would increase the conceptual clarity of the resulting code.
 
-@subsubheading Sequence Operations
+@subsubsection Sequence Operations
 
 The key to organizing programs so as to more clearly reflect the signal-flow
 structure is to concentrate on the ``signals'' that flow from one stage in the
@@ -8183,7 +8183,7 @@ definitions of @code{reverse} (@ref{Exercise 2.18}) in terms of
 @end lisp
 @end quotation
 
-@subsubheading Nested Mappings
+@subsubsection Nested Mappings
 
 We can extend the sequence paradigm to include many computations that are
 commonly expressed using nested loops.@footnote{This approach to nested
@@ -8475,7 +8475,7 @@ this language, which also satisfy the closure property, allow us to easily
 build arbitrarily complicated patterns.
 
 
-@subsubheading The picture language
+@subsubsection The picture language
 
 When we began our study of programming in @ref{1.1}, we emphasized the
 importance of describing a language by focusing on the language's primitives,
@@ -8788,7 +8788,7 @@ pattern called @code{square-limit}, whose application to @code{wave} and
 @end quotation
 @end float
 
-@subsubheading Higher-order operations
+@subsubsection Higher-order operations
 
 In addition to abstracting patterns of combining painters, we can work at a
 higher level, abstracting patterns of combining painter operations.  That is,
@@ -8859,7 +8859,7 @@ produces procedures @code{right-split} and @code{up-split} with the same
 behaviors as the ones already defined.
 @end quotation
 
-@subsubheading Frames
+@subsubsection Frames
 
 Before we can show how to implement painters and their means of combination, we
 must first consider frames.  A frame can be described by three vectors---an
@@ -9003,7 +9003,7 @@ For each constructor supply the appropriate selectors to produce an
 implementation for frames.
 @end quotation
 
-@subsubheading Painters
+@subsubsection Painters
 
 A painter is represented as a procedure that, given a frame as argument, draws
 a particular image shifted and scaled to fit the frame.  That is to say, if
@@ -9085,7 +9085,7 @@ The @code{wave} painter.
 @end enumerate
 @end quotation
 
-@subsubheading Transforming and combining painters
+@subsubsection Transforming and combining painters
 
 An operation on painters (such as @code{flip-vert} or @code{beside}) works by
 creating a painter that invokes the original painters with respect to frames
@@ -9216,7 +9216,7 @@ procedure given above, and again in terms of @code{beside} and suitable
 rotation operations (from @ref{Exercise 2.50}).
 @end quotation
 
-@subsubheading Levels of language for robust design
+@subsubsection Levels of language for robust design
 
 The picture language exercises some of the critical ideas we've introduced
 about abstraction with procedures and data.  The fundamental data abstractions,
@@ -9525,7 +9525,7 @@ algorithm that operates on abstract objects such as ``sums,'' ``products,'' and
 ``variables'' without worrying about how these are to be represented.  Only
 afterward will we address the representation problem.
 
-@subsubheading The differentiation program with abstract data
+@subsubsection The differentiation program with abstract data
 
 In order to keep things simple, we will consider a very simple
 symbolic-differentiation program that handles expressions that are built up
@@ -9632,7 +9632,7 @@ matter how we choose to represent algebraic expressions, as long as we design a
 proper set of selectors and constructors.  This is the issue we must address
 next.
 
-@subsubheading Representing algebraic expressions
+@subsubsection Representing algebraic expressions
 
 We can imagine many ways to use list structure to represent algebraic
 expressions.  For example, we could use lists of symbols that mirror the usual
@@ -9922,7 +9922,7 @@ are in @code{S} or in @code{T}'').
 is false (informally: ``No object is an element of the empty set'').
 }
 
-@subsubheading Sets as unordered lists
+@subsubsection Sets as unordered lists
 
 One way to represent a set is as a list of its elements in which no element
 appears more than once.  The empty set is represented by the empty list.  In
@@ -9998,7 +9998,7 @@ procedure for the non-duplicate representation?  Are there applications for
 which you would use this representation in preference to the non-duplicate one?
 @end quotation
 
-@subsubheading Sets as ordered lists
+@subsubsection Sets as ordered lists
 
 One way to speed up our set operations is to change the representation so that
 the set elements are listed in increasing order.  To do this, we need some way
@@ -10090,7 +10090,7 @@ unordered representation.
 implementation of @code{union-set} for sets represented as ordered lists.
 @end quotation
 
-@subsubheading Sets as binary trees
+@subsubsection Sets as binary trees
 
 We can do better than the ordered-list representation by arranging the set
 elements in the form of a tree.  Each node of the tree holds one element of the
@@ -10353,7 +10353,7 @@ binary trees.@footnote{@ref{Exercise 2.63} through @ref{Exercise 2.65} are due
 to Paul Hilfinger.}
 @end quotation
 
-@subsubheading Sets and information retrieval
+@subsubsection Sets and information retrieval
 
 We have examined options for using lists to represent sets and have seen how
 the choice of representation for a data object can have a large impact on the
@@ -10553,7 +10553,7 @@ the next bit in the string is 0.  This brings us to the leaf for A.  Then we
 start again at the root with the rest of the string 1010, so we move right,
 left, right, left and reach C.  Thus, the entire message is BAC.
 
-@subsubheading Generating Huffman trees
+@subsubsection Generating Huffman trees
 
 Given an ``alphabet'' of symbols and their relative frequencies, how do we
 construct the ``best'' code?  (In other words, which tree will encode messages
@@ -10595,7 +10595,7 @@ unique smallest-weight nodes at each step.  Also, the choice of the order in
 which the two nodes are merged (i.e., which will be the right branch and which
 will be the left branch) is arbitrary.
 
-@subsubheading Representing Huffman trees
+@subsubsection Representing Huffman trees
 
 In the exercises below we will work with a system that uses Huffman trees to
 encode and decode messages and generates Huffman trees according to the
@@ -10655,7 +10655,7 @@ in @ref{2.4} and @ref{2.5}.
 
 \enlargethispage{\baselineskip}
 
-@subsubheading The decoding procedure
+@subsubsection The decoding procedure
 
 The following procedure implements the decoding algorithm.  It takes as
 arguments a list of zeros and ones, together with a Huffman tree.
@@ -10689,7 +10689,7 @@ message, starting at the root of the tree.  Note the error check in the final
 clause of @code{choose-branch}, which complains if the procedure finds
 something other than a zero or a one in the input data.
 
-@subsubheading Sets of weighted elements
+@subsubsection Sets of weighted elements
 
 In our representation of trees, each non-leaf node contains a set of symbols,
 which we have represented as a simple list.  However, the tree-@/generating
@@ -11775,7 +11775,7 @@ incorporate the new personnel information into the central system?
 @end enumerate
 @end quotation
 
-@subsubheading Message passing
+@subsubsection Message passing
 
 The key idea of data-directed programming is to handle generic operations in
 programs by dealing explicitly with operation-and-type tables, such as the
@@ -12230,7 +12230,7 @@ extracted from these two packages.  Formulating coherent policies on the
 division of responsibility among packages can be an overwhelming task in
 designing systems with many packages and many cross-type operations.
 
-@subsubheading Coercion
+@subsubsection Coercion
 
 In the general situation of completely unrelated operations acting on
 completely unrelated types, implementing explicit cross-type operations,
@@ -12338,7 +12338,7 @@ such complexity and still preserve modularity in our programs, it is usually
 necessary to build systems that take advantage of still further structure in
 the relations among types, as we discuss next.
 
-@subsubheading Hierarchies of types
+@subsubsection Hierarchies of types
 
 The coercion scheme presented above relied on the existence of natural
 relations between pairs of types.  Often there is more ``global'' structure in
@@ -12459,7 +12459,7 @@ triangle      right          |       \    |
 @end quotation
 @end float
 
-@subsubheading Inadequacies of hierarchies
+@subsubsection Inadequacies of hierarchies
 
 \enlargethispage{\baselineskip}
 
@@ -12654,7 +12654,7 @@ will illustrate the kinds of decisions the designer of such a system faces, and
 how to apply the ideas of abstract data and generic operations to help organize
 this effort.
 
-@subsubheading Arithmetic on polynomials
+@subsubsection Arithmetic on polynomials
 
 Our first task in designing a system for performing arithmetic on polynomials
 is to decide just what a polynomial is.  Polynomials are normally defined
@@ -12913,7 +12913,7 @@ $$ [x^2 + (y + 1)x + 5] + [x^2 + 2x + 1], $$
 @noindent
 which requires adding the coefficient @math{y + 1} to the coefficient 2.}
 
-@subsubheading Representing term lists
+@subsubsection Representing term lists
 
 Finally, we must confront the job of implementing a good representation for
 term lists.  A term list is, in effect, a set of coefficients keyed by the
@@ -13092,7 +13092,7 @@ arguments and returns a list of the quotient and remainder polys.
 @end smalllisp
 @end quotation
 
-@subsubheading Hierarchies of types in symbolic algebra
+@subsubsection Hierarchies of types in symbolic algebra
 
 Our polynomial system illustrates how objects of one type (polynomials) may in
 fact be complex objects that have objects of many different types as parts.
@@ -13136,7 +13136,7 @@ variables, extend the polynomial package so that addition and multiplication of
 polynomials works for polynomials in different variables.  (This is not easy!)
 @end quotation
 
-@subsubheading Extended exercise: Rational functions
+@subsubsection Extended exercise: Rational functions
 
 We can extend our generic arithmetic system to include @newterm{rational
 functions}.  These are ``fractions'' whose numerator and denominator are
@@ -14220,7 +14220,7 @@ place where a value can be stored, and the value stored at this place can
 change.  In @ref{3.2} we will see how environments play this role of
 ``place'' in our computational model.
 
-@subsubheading Sameness and change
+@subsubsection Sameness and change
 
 The issue surfacing here is more profound than the mere breakdown of a
 particular model of computation.  As soon as we introduce change into our
@@ -14347,7 +14347,7 @@ example, ordinarily regard a rational number as a changeable object with
 identity, such that we could change the numerator and still have ``the same''
 rational number.
 
-@subsubheading Pitfalls of imperative programming
+@subsubsection Pitfalls of imperative programming
 
 In contrast to functional programming, programming that makes extensive use of
 assignment is known as @newterm{imperative programming}.  In addition to
@@ -15831,7 +15831,7 @@ evaluating this expression.  What would be printed as the values of @code{v}
 and @code{w}?
 @end quotation
 
-@subsubheading Sharing and identity
+@subsubsection Sharing and identity
 
 We mentioned in @ref{3.1.3} the theoretical issues of ``sameness'' and
 ``change'' raised by the introduction of assignment.  These issues arise in
@@ -16035,7 +16035,7 @@ algorithm that takes only a constant amount of space.  (This requires a very
 clever idea.)
 @end quotation
 
-@subsubheading Mutation is just assignment
+@subsubsection Mutation is just assignment
 
 When we introduced compound data, we observed in @ref{2.1.3} that pairs
 can be represented purely in terms of procedures:
@@ -16565,7 +16565,7 @@ To construct a new table, we simply create a list containing the symbol
   (list '*table*))
 @end lisp
 
-@subsubheading Two-dimensional tables
+@subsubsection Two-dimensional tables
 
 @noindent
 In a two-dimensional table, each value is indexed by two keys.  We can
@@ -16671,7 +16671,7 @@ one-dimensional tables described above:
   'ok)
 @end lisp
 
-@subsubheading Creating local tables
+@subsubsection Creating local tables
 
 The @code{lookup} and @code{insert!} operations defined above take the table as
 an argument.  This enables us to use programs that access more than one table.
@@ -17029,7 +17029,7 @@ primitive function boxes form the primitive elements of the language, that
 wiring boxes together provides a means of combination, and that specifying
 wiring patterns as procedures serves as a means of abstraction.
 
-@subsubheading Primitive function boxes
+@subsubsection Primitive function boxes
 
 The primitive function boxes implement the ``forces'' by which a change in the
 signal on one wire influences the signals on other wires.  To build function
@@ -17165,7 +17165,7 @@ C ------+   |     +-----+   |     +-----+   |     :  ------+   |
 @end quotation
 @end float
 
-@subsubheading Representing wires
+@subsubsection Representing wires
 
 A wire in our simulation will be a computational object with two local state
 variables: a @code{signal-value} (initially taken to be 0) and a collection of
@@ -17251,7 +17251,7 @@ the other devices attached to the wire.  The wire communicates the change to
 its neighbors by calling the action procedures provided to it when the
 connections were established.
 
-@subsubheading The agenda
+@subsubsection The agenda
 
 The only thing needed to complete the simulator is @code{after-delay}.  The
 idea here is that we maintain a data structure, called an @newterm{agenda},
@@ -17311,7 +17311,7 @@ agenda:
         (propagate))))
 @end lisp
 
-@subsubheading A sample simulation
+@subsubsection A sample simulation
 
 The following procedure, which places a ``probe'' on a wire, shows the
 simulator in action.  The probe tells the wire that, whenever its signal
@@ -17412,7 +17412,7 @@ would differ if we had defined @code{accept-@/action-@/procedure!} as
 @end lisp
 @end quotation
 
-@subsubheading Implementing the agenda
+@subsubsection Implementing the agenda
 
 Finally, we give details of the agenda data structure, which holds the
 procedures that are scheduled for future execution.
@@ -17660,7 +17660,7 @@ value (say 25), the leftmost multiplier will be awakened, and it will set @math{
 to @math{25 \cdot 9 = 225}.  Then @math{u} awakens the second multiplier, which sets @math{v} to
 45, and @math{v} awakens the adder, which sets @math{f} to 77.
 
-@subsubheading Using the constraint system
+@subsubsection Using the constraint system
 
 To use the constraint system to carry out the temperature computation outlined
 above, we first create two connectors, @code{C} and @code{F}, by calling the
@@ -17772,7 +17772,7 @@ very same network is being used to compute @code{C} given @code{F} and to
 compute @code{F} given @code{C}.  This nondirectionality of computation is the
 distinguishing feature of constraint-based systems.
 
-@subsubheading Implementing the constraint system
+@subsubsection Implementing the constraint system
 
 The constraint system is implemented via procedural objects with local state,
 in a manner very similar to the digital-circuit simulator of
@@ -17949,7 +17949,7 @@ the designated connector:
   me)
 @end lisp
 
-@subsubheading Representing connectors
+@subsubsection Representing connectors
 
 A connector is represented as a procedural object with local state variables
 @code{value}, the current value of the connector; @code{informant}, the object
@@ -18388,7 +18388,7 @@ balance in a way that depends on the balance, he must be able to assume that,
 just before the moment of change, the balance is still what he thought it was.
 
 @endpage
-@subsubheading Correct behavior of concurrent programs
+@subsubsection Correct behavior of concurrent programs
 
 The above example typifies the subtle bugs that can creep into concurrent
 programs.  The root of this complexity lies in the assignments to variables
@@ -18551,7 +18551,7 @@ processes so that we can be sure that the program behavior is correct.  Many
 mechanisms have been developed for this purpose.  In this section, we describe
 one of them, the @newterm{serializer}.
 
-@subsubheading Serializing access to shared state
+@subsubsection Serializing access to shared state
 
 Serialization implements the following idea: Processes will execute
 concurrently, but there will be certain collections of procedures that cannot
@@ -18570,7 +18570,7 @@ concurrently with this procedure by serializing all of these procedures with
 the same serializer.  This guarantees that the value of the variable cannot be
 changed between an access and the corresponding assignment.
 
-@subsubheading Serializers in Scheme
+@subsubsection Serializers in Scheme
 
 To make the above mechanism more concrete, suppose that we have extended Scheme
 to include a procedure called @code{parallel-execute}:
@@ -18774,7 +18774,7 @@ Is this a safe change to make?  In particular, is there any difference in what
 concurrency is allowed by these two versions of @code{make-@/account}?
 @end quotation
 
-@subsubheading Complexity of using multiple shared resources
+@subsubsection Complexity of using multiple shared resources
 
 Serializers provide a powerful abstraction that helps isolate the complexities
 of concurrent programs so that they can be dealt with carefully and (hopefully)
@@ -18947,7 +18947,7 @@ Explain what is wrong with Louis's reasoning.  In particular, consider what
 happens when @code{serialized-exchange} is called.
 @end quotation
 
-@subsubheading Implementing serializers
+@subsubsection Implementing serializers
 
 We implement serializers in terms of a more primitive synchronization mechanism
 called a @newterm{mutex}.  A mutex is an object that supports two
@@ -19100,7 +19100,7 @@ in terms of atomic @code{test-and-set!} operations.
 @end enumerate
 @end quotation
 
-@subsubheading Deadlock
+@subsubsection Deadlock
 
 Now that we have seen how to implement serializers, we can see that account
 exchanging still has a problem, even with the @code{serialized-exchange}
@@ -19149,7 +19149,7 @@ shared resources before it can know which additional shared resources it will
 require.)
 @end quotation
 
-@subsubheading Concurrency, time, and communication
+@subsubsection Concurrency, time, and communication
 
 We've seen how programming concurrent systems requires controlling the ordering
 of events when different processes access shared state, and we've seen how to
@@ -19461,7 +19461,7 @@ automatically cause @math{\langle}@var{b}@math{\kern0.08em\rangle} to be evaluat
 not want to happen.  For the same reason, @code{delay} must be a special form,
 though @code{force} can be an ordinary procedure.}
 
-@subsubheading The stream implementation in action
+@subsubsection The stream implementation in action
 
 To see how this implementation behaves, let us analyze the ``outrageous'' prime
 computation we saw above, reformulated in terms of streams:
@@ -19587,7 +19587,7 @@ write procedures as if the streams existed ``all at once'' when, in reality,
 the computation is performed incrementally, as in traditional programming
 styles.
 
-@subsubheading Implementing @code{delay} and @code{force}
+@subsubsection Implementing @code{delay} and @code{force}
 
 Although @code{delay} and @code{force} may seem like mysterious operations,
 their implementation is really quite straightforward.  @code{delay} must
@@ -19885,7 +19885,7 @@ infinite, because the sieve contains a sieve within it.
 @c @end quotation
 @end float
 
-@subsubheading Defining streams implicitly
+@subsubsection Defining streams implicitly
 
 The @code{integers} and @code{fibs} streams above were defined by specifying
 ``generating'' procedures that explicitly compute the stream elements one by
@@ -20299,7 +20299,7 @@ signal) as a focus of interest, rather than the values of the state variables
 at individual moments.  This makes it convenient to combine and compare
 components of state from different moments.
 
-@subsubheading Formulating iterations as stream processes
+@subsubsection Formulating iterations as stream processes
 
 In @ref{1.2.1}, we introduced iterative processes, which proceed by
 updating state variables.  We know now that we can represent state as a
@@ -20574,7 +20574,7 @@ the same way we did above for @math{\pi}.  How rapidly do these sequences
 converge?
 @end quotation
 
-@subsubheading Infinite streams of pairs
+@subsubsection Infinite streams of pairs
 
 In @ref{2.2.3}, we saw how the sequence paradigm handles traditional
 nested loops as processes defined on sequences of pairs.  If we generalize this
@@ -20876,7 +20876,7 @@ generate a stream of all numbers that can be written as the sum of two
 squares in three different ways (showing how they can be so written).
 @end quotation
 
-@subsubheading Streams as signals
+@subsubsection Streams as signals
 
 We began our discussion of streams by describing them as computational analogs
 of the ``signals'' in signal-processing systems.  In fact, we can use streams
@@ -21474,7 +21474,7 @@ RLC circuit with @math{R} = 1 ohm, @math{C} = 0.2 farad, @math{L} = 1 henry, @ma
 10 volts.
 @end quotation
 
-@subsubheading Normal-order evaluation
+@subsubsection Normal-order evaluation
 
 The examples in this section illustrate how the explicit use of @code{delay}
 and @code{force} provides great programming flexibility, but the same examples
@@ -21620,7 +21620,7 @@ perform.  Instead, it will produce a stream of estimates based on successively
 more trials.
 @end quotation
 
-@subsubheading A functional-programming view of time
+@subsubsection A functional-programming view of time
 
 Let us now return to the issues of objects and state that were raised at the
 beginning of this chapter and examine them in a new light.  We introduced
@@ -22104,7 +22104,7 @@ Arguments   |  8     Eval          `888888888888888888) | Environment
 The evaluation process can be described as the interplay between two
 procedures: @code{eval} and @code{apply}.
 
-@subsubheading Eval
+@subsubsection Eval
 
 @code{eval} takes as arguments an expression and an environment.  It classifies
 the expression and directs its evaluation.  @code{eval} is structured as a case
@@ -22212,7 +22212,7 @@ This allows a user to add new types of expressions that @code{eval} can
 distinguish, without modifying the definition of @code{eval} itself.  (See
 @ref{Exercise 4.3}.)
 
-@subsubheading Apply
+@subsubsection Apply
 
 @code{apply} takes two arguments, a procedure and a list of arguments to which
 the procedure should be applied.  @code{apply} classifies procedures into two
@@ -22240,7 +22240,7 @@ the definition of @code{apply}:
           "Unknown procedure type: APPLY" procedure))))
 @end lisp
 
-@subsubheading Procedure arguments
+@subsubsection Procedure arguments
 
 When @code{eval} processes a procedure application, it uses
 @code{list-of-values} to produce the list of arguments to which the procedure
@@ -22263,7 +22263,7 @@ procedures.}
             (list-of-values (rest-operands exps) env))))
 @end lisp
 
-@subsubheading Conditionals
+@subsubsection Conditionals
 
 @code{eval-if} evaluates the predicate part of an @code{if} expression in the
 given environment.  If the result is true, @code{eval-if} evaluates the
@@ -22288,7 +22288,7 @@ being implemented and the implementation language are the same.  Contemplation
 of the meaning of @code{true?} here yields expansion of consciousness without
 the abuse of substance.}
 
-@subsubheading Sequences
+@subsubsection Sequences
 
 @code{eval-sequence} is used by @code{apply} to evaluate the sequence of
 expressions in a procedure body and by @code{eval} to evaluate the sequence of
@@ -22305,7 +22305,7 @@ which they occur.  The value returned is the value of the final expression.
          (eval-sequence (rest-exps exps) env))))
 @end lisp
 
-@subsubheading Assignments and definitions
+@subsubsection Assignments and definitions
 
 The following procedure handles assignments to variables.  It calls @code{eval}
 to find the value to be assigned and transmits the variable and the resulting
@@ -22553,7 +22553,7 @@ expression types.  The @code{car} of the expression is the operator, and the
 
 @end itemize
 
-@subsubheading Derived expressions
+@subsubsection Derived expressions
 
 Some special forms in our language can be defined in terms of expressions
 involving other special forms, rather than being implemented directly.  One
@@ -22818,7 +22818,7 @@ manipulates internally, as part of the execution of a program, such as the
 representation of procedures and environments and the representation of true
 and false.
 
-@subsubheading Testing of predicates
+@subsubsection Testing of predicates
 
 For conditionals, we accept anything to be true that is not the explicit
 @code{false} object.
@@ -22828,7 +22828,7 @@ For conditionals, we accept anything to be true that is not the explicit
 (define (false? x) (eq? x false))
 @end lisp
 
-@subsubheading Representing procedures
+@subsubsection Representing procedures
 
 To handle primitives, we assume that we have available the following
 procedures:
@@ -22867,7 +22867,7 @@ environments using the constructor @code{make-procedure}:
 (define (procedure-environment p) (cadddr p))
 @end lisp
 
-@subsubheading Operations on Environments
+@subsubsection Operations on Environments
 
 The evaluator needs operations for manipulating environments.  As explained in
 @ref{3.2}, an environment is a sequence of frames, where each frame is
@@ -24203,7 +24203,7 @@ both subtle and confusing in the presence of assignments.  (See @ref{Exercise 4.
 and @ref{Exercise 4.29}.)  An excellent article by @ref{Clinger (1982)}
 attempts to clarify the multiple dimensions of confusion that arise here.}
 
-@subsubheading Modifying the evaluator
+@subsubsection Modifying the evaluator
 
 The main difference between the lazy evaluator and the one in @ref{4.1}
 is in the handling of procedure applications in @code{eval} and @code{apply}.
@@ -24335,7 +24335,7 @@ successful evaluation of the @code{try} expression discussed in
 @i{1}
 @end lisp
 
-@subsubheading Representing thunks
+@subsubsection Representing thunks
 
 Our evaluator must arrange to create thunks when procedures are applied to
 arguments and to force these thunks later.  A thunk must package an expression
@@ -24962,7 +24962,7 @@ section, but more sophisticated, because it uses dependency-directed
 backtracking rather than chronological backtracking.  @ref{Winston 1992} gives an
 introduction to both kinds of backtracking.}
 
-@subsubheading Driver loop
+@subsubsection Driver loop
 
 The driver loop for the @code{amb} evaluator has some unusual properties.  It
 reads an expression and prints the value of the first non-failing execution, as
@@ -25058,7 +25058,7 @@ nondeterministic programming is that we can suppress the details of how search
 is carried out, thereby expressing our programs at a higher level of
 abstraction.
 
-@subsubheading Logic Puzzles
+@subsubsection Logic Puzzles
 
 The following puzzle (taken from @ref{Dinesman 1968}) is typical of a large class of
 simple logic puzzles:
@@ -25210,7 +25210,7 @@ last name is Moore.
 each other.  Write a nondeterministic program to solve this puzzle.
 @end quotation
 
-@subsubheading Parsing natural language
+@subsubsection Parsing natural language
 
 Programs designed to accept natural language as input usually start by
 attempting to @newterm{parse} the input, that is, to match the input against
@@ -25526,7 +25526,7 @@ procedure produced by analysis of that expression.  The difference between the
 interpretation of ordinary Scheme and the interpretation of nondeterministic
 Scheme will be entirely in the execution procedures.
 
-@subsubheading Execution procedures and continuations
+@subsubsection Execution procedures and continuations
 
 Recall that the execution procedures for the ordinary evaluator take one
 argument: the environment of execution.  In contrast, the execution procedures
@@ -25620,7 +25620,7 @@ to propagate the failure back to the previous choice point or to the top level.
 
 @end itemize
 
-@subsubheading Structure of the evaluator
+@subsubsection Structure of the evaluator
 
 The syntax- and data-representation procedures for the @code{amb} evaluator,
 and also the basic @code{analyze} procedure, are identical to those in the
@@ -25689,7 +25689,7 @@ other.  In going through the following code, you should compare each of the
 execution procedures with the corresponding procedure for the ordinary
 evaluator given in @ref{4.1.7}.
 
-@subsubheading Simple expressions
+@subsubsection Simple expressions
 
 The execution procedures for the simplest kinds of expressions are essentially
 the same as those for the ordinary evaluator, except for the need to manage the
@@ -25721,7 +25721,7 @@ as usual.  Such a ``failure'' indicates a program bug---a reference to an
 unbound variable; it is not an indication that we should try another
 nondeterministic choice instead of the one that is currently being tried.
 
-@subsubheading Conditionals and sequences
+@subsubsection Conditionals and sequences
 
 Conditionals are also handled in a similar way as in the ordinary evaluator.
 The execution procedure generated by @code{analyze-if} invokes the predicate
@@ -25776,7 +25776,7 @@ then @code{b}, we call @code{a} with a success continuation that calls
     (loop (car procs) (cdr procs))))
 @end lisp
 
-@subsubheading Definitions and assignments
+@subsubsection Definitions and assignments
 
 Definitions are another case where we must go to some trouble to manage the
 continuations, because it is necessary to evaluate the definition-value
@@ -25840,7 +25840,7 @@ the assignment before actually calling @code{fail2}.
              fail))))
 @end lisp
 
-@subsubheading Procedure applications
+@subsubsection Procedure applications
 
 The execution procedure for applications contains no new ideas except for the
 technical complexity of managing the continuations.  This complexity arises in
@@ -25916,7 +25916,7 @@ evaluator, except for the need to manage the continuations.
                 proc))))
 @end lisp
 
-@subsubheading Evaluating @code{amb} expressions
+@subsubsection Evaluating @code{amb} expressions
 
 The @code{amb} special form is the key element in the nondeterministic
 language.  Here we see the essence of the interpretation process and the reason
@@ -25940,7 +25940,7 @@ are no more alternatives to try, the entire @code{amb} expression fails.
       (try-next cprocs))))
 @end lisp
 
-@subsubheading Driver loop
+@subsubsection Driver loop
 
 The driver loop for the @code{amb} evaluator is complex, due to the mechanism
 that permits the user to try again in evaluating an expression.  The driver
@@ -26314,7 +26314,7 @@ high-technology company in the Boston area.  The language provides
 pattern-directed access to personnel information and can also take advantage of
 general rules in order to make logical deductions.
 
-@subsubheading A sample data base
+@subsubsection A sample data base
 
 The personnel data base for Microshaft contains @newterm{assertions} about
 company personnel.  Here is the information about Ben Bitdiddle, the resident
@@ -26427,7 +26427,7 @@ Also, as is well known,
             (administration big wheel))
 @end lisp
 
-@subsubheading Simple queries
+@subsubsection Simple queries
 
 The query language allows users to retrieve information from the data base by
 posing queries in response to the system's prompt.  For example, to find all
@@ -26592,7 +26592,7 @@ the names and addresses of all people who live in Slumerville.
 @end enumerate
 @end quotation
 
-@subsubheading Compound queries
+@subsubsection Compound queries
 
 Simple queries form the primitive operations of the query language.  In order
 to form compound operations, the query language provides means of combination.
@@ -26734,7 +26734,7 @@ together with the supervisor's name and job.
 @end enumerate
 @end quotation
 
-@subsubheading Rules
+@subsubsection Rules
 
 In addition to primitive queries and compound queries, the query language
 provides means for abstracting queries.  These are given by @newterm{rules}.
@@ -26932,7 +26932,7 @@ Why does this happen?  Is there a way to find a list of people who live near
 each other, in which each pair appears only once?  Explain.
 @end quotation
 
-@subsubheading Logic as programs
+@subsubsection Logic as programs
 
 We can regard a rule as a kind of logical implication: @emph{If} an assignment
 of values to pattern variables satisfies the body, @emph{then} it satisfies the
@@ -27104,7 +27104,7 @@ in a manner analogous to the way @code{eval} classifies expressions for the
 interpreter described in @ref{4.1}.
 
 @endpage
-@subsubheading Pattern matching
+@subsubsection Pattern matching
 
 A @newterm{pattern matcher} is a program that tests whether some datum fits a
 specified pattern.  For example, the data list @code{((a b) c (a b))} matches
@@ -27145,7 +27145,7 @@ use the frame returned by the match to instantiate the pattern with a value for
 @code{?x}.
 
 @endpage
-@subsubheading Streams of frames
+@subsubsection Streams of frames
 
 The testing of patterns against frames is organized through the use of streams.
 Given a single frame, the matching process runs through the data-base entries
@@ -27209,7 +27209,7 @@ is finally printed.
 @c @end quotation
 @end float
 
-@subsubheading Compound queries
+@subsubsection Compound queries
 
 The real elegance of the stream-of-frames implementation is evident when we
 deal with compound queries.  The processing of compound queries makes use of
@@ -27366,7 +27366,7 @@ streams.  We use each frame in the stream to instantiate any variables in the
 pattern, then apply the Lisp predicate.  We remove from the input stream all
 frames for which the predicate fails.
 
-@subsubheading Unification
+@subsubsection Unification
 
 In order to handle rules in the query language, we must be able to find the
 rules whose conclusions match a given query pattern.  Rule conclusions are like
@@ -27455,7 +27455,7 @@ a)}, discussed above, is @code{(a a a)}.  For our implementation, it is more
 convenient to think of the result of unification as a frame rather than a
 pattern.}
 
-@subsubheading Applying rules
+@subsubsection Applying rules
 
 Unification is the key to the component of the query system that makes
 inferences from rules. To see how this is accomplished, consider processing a
@@ -27527,7 +27527,7 @@ are the means of abstraction in the query language.  In each case, we unwind
 the abstraction by creating appropriate bindings and evaluating the rule or
 procedure body relative to these.
 
-@subsubheading Simple queries
+@subsubsection Simple queries
 
 We saw earlier in this section how to evaluate simple queries in the absence of
 rules.  Now that we have seen how to apply rules, we can describe how to
@@ -27559,7 +27559,7 @@ form one large stream, which therefore consists of all the ways that any of the
 frames in the original input stream can be extended to produce a match with the
 given pattern.
 
-@subsubheading The query evaluator and the driver loop
+@subsubsection The query evaluator and the driver loop
 
 Despite the complexity of the underlying matching operations, the system is
 organized much like an evaluator for any language.  The procedure that
@@ -27675,7 +27675,7 @@ concerns of research in logic programming is to find ways to achieve more
 consistency with mathematical logic without unduly sacrificing expressive
 power.}
 
-@subsubheading Infinite loops
+@subsubsection Infinite loops
 
 A consequence of the procedural interpretation of logic programs is that it is
 possible to construct hopelessly inefficient programs for solving certain
@@ -27756,7 +27756,7 @@ in performing deductions.  Imagine a diabolical rule of the form ``To show
 @math{P(x)} is true, show that @math{P(f(x))} is true,'' for some
 suitably chosen function @math{f}.}
 
-@subsubheading Problems with @code{not}
+@subsubsection Problems with @code{not}
 
 Another quirk in the query system concerns @code{not}.  Given the data base of
 @ref{4.4.1}, consider the following two queries:
@@ -28041,7 +28041,7 @@ processed by @code{simple-query}.
 @code{type} and @code{contents}, defined in @ref{4.4.4.7}, implement
 the abstract syntax of the special forms.
 
-@subsubheading Simple queries
+@subsubsection Simple queries
 
 The @code{simple-query} procedure handles simple queries.  It takes as
 arguments a simple query (a pattern) together with a stream of frames, and it
@@ -28071,7 +28071,7 @@ are combined using @code{stream-flatmap} (@ref{4.4.4.6}) to form one
 large stream of all the ways that any of the frames in the original input
 stream can be extended to produce a match with the given pattern.
 
-@subsubheading Compound queries
+@subsubsection Compound queries
 
 @code{and} queries are handled as illustrated in @ref{Figure 4.5} by the
 @code{conjoin} procedure.  @code{conjoin} takes as inputs the conjuncts and the
@@ -28119,7 +28119,7 @@ separately and merged using the @code{interleave-delayed} procedure from
 The predicates and selectors for the syntax of conjuncts and disjuncts are
 given in @ref{4.4.4.7}.
 
-@subsubheading Filters
+@subsubsection Filters
 
 @code{not} is handled by the method outlined in @ref{4.4.2}.  We
 attempt to extend each frame in the input stream to satisfy the query being
@@ -28290,7 +28290,7 @@ variable.
 The procedures used by @code{extend-if-consistent} to manipulate bindings are
 defined in @ref{4.4.4.8}.
 
-@subsubheading Patterns with dotted tails
+@subsubsection Patterns with dotted tails
 
 If a pattern contains a dot followed by a pattern variable, the pattern
 variable matches the rest of the data list (rather than the next element of the
@@ -29564,7 +29564,7 @@ real machines.
 to describe the iterative factorial machine of @ref{Exercise 5.1}.
 @end quotation
 
-@subsubheading Actions
+@subsubsection Actions
 
 Let us modify the @acronym{GCD} machine so that we can type in the numbers
 whose @acronym{GCD} we want and get the answer printed at our terminal.  We
@@ -30255,7 +30255,7 @@ registers that need to be saved depends on the particular machine, since not
 all recursive computations need the original values of registers that are
 modified during solution of the subproblem (see @ref{Exercise 5.4}).
 
-@subsubheading A double recursion
+@subsubsection A double recursion
 
 Let us examine a more complex recursive process, the tree-recursive computation
 of the Fibonacci numbers, which we introduced in @ref{1.2.2}:
@@ -30556,7 +30556,7 @@ machine and installs these as the machine's instruction sequence.
     machine))
 @end lisp
 
-@subsubheading Registers
+@subsubsection Registers
 
 We will represent a register as a procedure with local state, as in
 @ref{Chapter 3}.  The procedure @code{make-register} creates a register that
@@ -30583,7 +30583,7 @@ The following procedures are used to access registers:
   ((register 'set) value))
 @end lisp
 
-@subsubheading The stack
+@subsubsection The stack
 
 We can also represent a stack as a procedure with local state.  The procedure
 @code{make-stack} creates a stack whose local state consists of a list of the
@@ -30620,7 +30620,7 @@ The following procedures are used to access stacks:
 (define (push stack value) ((stack 'push) value))
 @end lisp
 
-@subsubheading The basic machine
+@subsubsection The basic machine
 
 The @code{make-new-machine} procedure, shown in @ref{Figure 5.13}, constructs
 an object whose local state consists of a stack, an initially empty instruction
@@ -30978,7 +30978,7 @@ detailed syntax of register-machine expressions from the general execution
 mechanism, as we did for evaluators in @ref{4.1.2}, by using syntax
 procedures to extract and classify the parts of an instruction.
 
-@subsubheading @code{assign} instructions
+@subsubsection @code{assign} instructions
 
 The @code{make-assign} procedure handles @code{assign} instructions:
 
@@ -31039,7 +31039,7 @@ to the result obtained by executing @code{value-proc}.  Then it advances the
 @code{advance-pc} is the normal termination for all instructions except
 @code{branch} and @code{goto}.
 
-@subsubheading @code{test}, @code{branch}, and @code{goto} instructions
+@subsubsection @code{test}, @code{branch}, and @code{goto} instructions
 
 @code{make-test} handles @code{test} instructions in a similar way.  It
 extracts the expression that specifies the condition to be tested and generates
@@ -31113,7 +31113,7 @@ to check---the @code{pc} is always set to the new destination.
   (cadr goto-instruction))
 @end lisp
 
-@subsubheading Other instructions
+@subsubsection Other instructions
 
 The stack instructions @code{save} and @code{restore} simply use the stack with
 the designated register and advance the @code{pc}:
@@ -31152,7 +31152,7 @@ action procedure is executed and the @code{pc} advanced.
 (define (perform-action inst) (cdr inst))
 @end lisp
 
-@subsubheading Execution procedures for subexpressions
+@subsubsection Execution procedures for subexpressions
 
 The value of a @code{reg}, @code{label}, or @code{const} expression may be
 needed for assignment to a register (@code{make-assign}) or for input to an
@@ -31579,7 +31579,7 @@ address} that specifies the beginning location of a vector in memory with an
 @newterm{index} that specifies the offset of a particular element of the
 vector.
 
-@subsubheading Representing Lisp data
+@subsubsection Representing Lisp data
 
 We can use vectors to implement the basic pair structures required for a
 list-structured memory.  Let us imagine that computer memory is divided into
@@ -31693,7 +31693,7 @@ enters this pointer in the obarray.  If the reader has seen the string before,
 it returns the symbol pointer stored in the obarray.  This process of replacing
 character strings by unique pointers is called @newterm{interning} symbols.
 
-@subsubheading Implementing the primitive list operations
+@subsubsection Implementing the primitive list operations
 
 Given the above representation scheme, we can replace each ``primitive'' list
 operation of a register machine with one or more primitive vector operations.
@@ -31780,7 +31780,7 @@ simply tests the equality of all fields in the registers, and predicates such
 as @code{pair?}, @code{null?}, @code{symbol?}, and @code{number?} need only
 check the type field.
 
-@subsubheading Implementing stacks
+@subsubsection Implementing stacks
 
 Although our register machines use stacks, we need do nothing special here,
 since stacks can be modeled in terms of lists.  The stack can be a list of the
@@ -31957,7 +31957,7 @@ extremely important performance consideration in machines with virtual memory,
 in which accesses to widely separated memory addresses may require extra paging
 operations.}
 
-@subsubheading Implementation of a stop-and-copy garbage collector
+@subsubsection Implementation of a stop-and-copy garbage collector
 
 We now use our register-machine language to describe the stop-and-copy
 algorithm in more detail.  We will assume that there is a register called
@@ -32255,7 +32255,7 @@ on the chip and the method by which it was designed.}
 @end quotation
 @end float
 
-@subsubheading Registers and operations
+@subsubsection Registers and operations
 
 In designing the explicit-control evaluator, we must specify the operations to
 be used in our register machine.  We described the metacircular evaluator in
@@ -32340,7 +32340,7 @@ eval-dispatch
   (goto (label unknown-expression-type))
 @end lisp
 
-@subsubheading Evaluating simple expressions
+@subsubsection Evaluating simple expressions
 
 Numbers and strings (which are self-evaluating), variables, quotations, and
 @code{lambda} expressions have no subexpressions to be evaluated.  For these,
@@ -32371,7 +32371,7 @@ hold the parameters and body of the lambda expression so that they can be
 passed to the @code{make-procedure} operation, along with the environment in
 @code{env}.
 
-@subsubheading Evaluating procedure applications
+@subsubsection Evaluating procedure applications
 
 A procedure application is specified by a combination containing an operator
 and operands.  The operator is a subexpression whose value is a procedure, and
@@ -32534,7 +32534,7 @@ the @code{rest-operands} selector is implemented as @code{cdr}, the
 explicit-control evaluator will evaluate the operands of a combination in
 left-to-right order.
 
-@subsubheading Procedure application
+@subsubsection Procedure application
 
 The entry point @code{apply-dispatch} corresponds to the @code{apply} procedure
 of the metacircular evaluator.  By the time we get to @code{apply-dispatch},
@@ -32674,7 +32674,7 @@ ev-sequence-last-exp
   (goto (label eval-dispatch))
 @end lisp
 
-@subsubheading Tail recursion
+@subsubsection Tail recursion
 
 In @ref{Chapter 1} we said that the process described by a procedure such as
 
@@ -32823,7 +32823,7 @@ ev-if-consequent
 
 \enlargethispage{\baselineskip}
 
-@subsubheading Assignments and definitions
+@subsubsection Assignments and definitions
 
 Assignments are handled by @code{ev-assignment}, which is reached from
 @code{eval-dispatch} with the assignment expression in @code{exp}.  The code at
@@ -33023,7 +33023,7 @@ simulation involved.  Our expressions are evaluated by the
 explicit-control-evaluator machine, which is being simulated by a Scheme
 program, which is itself being evaluated by the Scheme interpreter.
 
-@subsubheading Monitoring the performance of the evaluator
+@subsubsection Monitoring the performance of the evaluator
 
 Simulation can be a powerful tool to guide the implementation of evaluators.
 Simulations make it easy not only to explore variations of the register-machine
@@ -33312,7 +33312,7 @@ development and debugging.  In @ref{5.5.7}, after we have implemented
 the compiler, we will show how to interface it with our interpreter to produce
 an integrated interpreter-compiler development system.
 
-@subsubheading An overview of the compiler
+@subsubsection An overview of the compiler
 
 Our compiler is much like our interpreter, both in its structure and in the
 function it performs.  Accordingly, the mechanisms used by the compiler for
@@ -33450,7 +33450,7 @@ type of expression, it dispatches to a specialized @newterm{code generator}:
          (error "Unknown expression type: COMPILE" exp))))
 @end lisp
 
-@subsubheading Targets and linkages
+@subsubsection Targets and linkages
 
 @code{compile} and the code generators that it calls take two arguments in
 addition to the expression to compile.  There is a @newterm{target}, which
@@ -33500,7 +33500,7 @@ sequence. In the second case, we will return from a procedure call.  In both
 cases, the value of the expression will be placed into the target @code{val}
 register.
 
-@subsubheading Instruction sequences and stack usage
+@subsubsection Instruction sequences and stack usage
 
 Each code generator returns an @newterm{instruction sequence} containing the
 object code it has generated for the expression.  Code generation for a
@@ -33724,7 +33724,7 @@ think of this idea?
 In this section and the next we implement the code generators to which the
 @code{compile} procedure dispatches.
 
-@subsubheading Compiling linkage code
+@subsubsection Compiling linkage code
 
 In general, the output of each code generator will end with
 instructions---generated by the procedure @code{compile-linkage}---that
@@ -33800,7 +33800,7 @@ and restored.
    (compile-linkage linkage)))
 @end lisp
 
-@subsubheading Compiling simple expressions
+@subsubsection Compiling simple expressions
 
 The code generators for self-evaluating expressions, quotations, and variables
 construct instruction sequences that assign the required value to the target
@@ -33880,7 +33880,7 @@ designed to explicitly place its result in @code{val} for use by this sequence.
 would cause the previous contents of @code{val} to be restored right after the
 @code{get-value-code} is run.)
 
-@subsubheading Compiling conditional expressions
+@subsubsection Compiling conditional expressions
 
 The code for an @code{if} expression compiled with a given target and linkage
 has the form
@@ -33965,7 +33965,7 @@ Note that @code{cond} is a derived expression, so all that the compiler needs
 to do handle it is to apply the @code{cond->if} transformer (from
 @ref{4.1.2}) and compile the resulting @code{if} expression.
 
-@subsubheading Compiling sequences
+@subsubsection Compiling sequences
 
 The compilation of sequences (from procedure bodies or explicit @code{begin}
 expressions) parallels their evaluation.  Each expression of the sequence is
@@ -33986,7 +33986,7 @@ linkage at the end of the sequence) are preserved.
        (compile-sequence (rest-exps seq) target linkage))))
 @end lisp
 
-@subsubheading Compiling @code{lambda} expressions
+@subsubsection Compiling @code{lambda} expressions
 
 @code{lambda} expressions construct procedures.  The object code for a
 @code{lambda} expression must have the form
@@ -34215,7 +34215,7 @@ sequences from the order supplied by @code{compile-application}.
 @end lisp
 
 @endpage
-@subsubheading Applying procedures
+@subsubsection Applying procedures
 
 After evaluating the elements of a combination, the compiled code must apply
 the procedure in @code{proc} to the arguments in @code{argl}.  The code
@@ -34283,7 +34283,7 @@ The primitive and compound branches, like the true and false branches in
 rather than the ordinary @code{append-instruction-sequences}, because they will
 not be executed sequentially.
 
-@subsubheading Applying compiled procedures
+@subsubsection Applying compiled procedures
 
 The code that handles procedure application is the most subtle part of the
 compiler, even though the instruction sequences it generates are very short.  A
@@ -35546,7 +35546,7 @@ interpreted version of the same procedure, shown at the end of
 depth of 28.  This illustrates the optimization that results from our
 compilation strategy.
 
-@subsubheading Interpretation and compilation
+@subsubsection Interpretation and compilation
 
 With the programs in this section, we can now experiment with the alternative
 execution strategies of interpretation and compilation.@footnote{We can do even
