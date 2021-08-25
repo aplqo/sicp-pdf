@@ -931,7 +931,7 @@ Courtemanche, Henry M. Wu, Andrew Berlin, and Ruth Shyu.
 
 Beyond the @acronym{MIT} implementation, we would like to thank the many people
 who worked on the @acronym{IEEE} Scheme standard, including William Clinger and
-Jonathan Rees, who edited the @math{\rm R^4RS}, and Chris Haynes, David Bartley,
+Jonathan Rees, who edited the @math{\rmfamily R^4RS}, and Chris Haynes, David Bartley,
 Chris Hanson, and Jim Miller, who prepared the @acronym{IEEE} standard.
 
 Dan Friedman has been a long-time leader of the Scheme community.  The
@@ -1589,12 +1589,12 @@ The general form of a procedure definition is
 @end lisp
 
 @noindent
-The @math{\langle\hbox{\sl name}\kern0.08em\rangle} is a symbol to be associated with the procedure definition in
+The @math{\langle\hbox{\slshape name}\kern0.08em\rangle} is a symbol to be associated with the procedure definition in
 the environment.@footnote{Throughout this book, we will describe the general
 syntax of expressions by using italic symbols delimited by angle
 brackets---e.g., @math{\langle}@var{name}@math{\kern0.08em\rangle}---to denote the ``slots'' in the expression to be
-filled in when such an expression is actually used.} The @math{\langle\hbox{\sl formal parameters}\kern0.08em\rangle} are the names used within the body of the procedure to refer to
-the corresponding arguments of the procedure.  The @math{\langle\hbox{\sl body}\kern0.08em\rangle} is an
+filled in when such an expression is actually used.} The @math{\langle\hbox{\slshape formal parameters}\kern0.08em\rangle} are the names used within the body of the procedure to refer to
+the corresponding arguments of the procedure.  The @math{\langle\hbox{\slshape body}\kern0.08em\rangle} is an
 expression that will yield the value of the procedure application when the
 formal parameters are replaced by the actual arguments to which the procedure
 is applied.@footnote{More generally, the body of the procedure can be a
@@ -1965,7 +1965,7 @@ predicates.  The three most frequently used are these:
 @itemize @bullet
 
 @item
-@math{\hbox{\tt(and }\langle{e_1}\rangle\;\;\dots\;\;\langle{e_n}\rangle\hbox{\tt)}}
+@math{\hbox{\ttfamily(and }\langle{e_1}\rangle\;\;\dots\;\;\langle{e_n}\rangle\hbox{\ttfamily)}}
 
 The interpreter evaluates the expressions @math{\langle{e}\kern0.08em\rangle} one at a time, in
 left-to-right order.  If any @math{\langle{e}\kern0.08em\rangle} evaluates to false, the value of the
@@ -1974,7 +1974,7 @@ evaluated.  If all @math{\langle{e}\kern0.08em\rangle}'s evaluate to true values
 @code{and} expression is the value of the last one.
 
 @item
-@math{\hbox{\tt(or }\langle{e_1}\rangle\;\;\dots\;\;\langle{e_n}\rangle\hbox{\tt)}}
+@math{\hbox{\ttfamily(or }\langle{e_1}\rangle\;\;\dots\;\;\langle{e_n}\rangle\hbox{\ttfamily)}}
 
 The interpreter evaluates the expressions @math{\langle{e}\kern0.08em\rangle} one at a time, in
 left-to-right order.  If any @math{\langle{e}\kern0.08em\rangle} evaluates to a true value, that value is
@@ -1983,7 +1983,7 @@ returned as the value of the @code{or} expression, and the rest of the
 of the @code{or} expression is false.
 
 @item
-@math{\hbox{\tt(not }\langle{e}\rangle\hbox{\tt)}}
+@math{\hbox{\ttfamily(not }\langle{e}\rangle\hbox{\ttfamily)}}
 
 The value of a @code{not} expression is true when the expression @math{\langle{e}\kern0.08em\rangle}
 evaluates to false, and false otherwise.
@@ -2136,8 +2136,8 @@ sqrt(x) = the y such that y >= 0 and y^2 = x
 
 @end ifinfo
 @tex
-$$\sqrt{x}\;\; = {\rm\;\; the\;\;} y
-{\rm\;\; such\;\; that\;\;} y \ge 0 {\rm\;\; and\;\;} y^2 = x.$$
+$$\sqrt{x}\;\; = {\rmfamily\;\; the\;\;} y
+{\rmfamily\;\; such\;\; that\;\;} y \ge 0 {\rmfamily\;\; and\;\;} y^2 = x.$$
 @end tex
 This describes a perfectly legitimate mathematical function.  We could use it
 to recognize whether one number is the square root of another, or to derive
@@ -2978,11 +2978,11 @@ Fib(n) = <  1                        if n = 1
 
 @end ifinfo
 @tex
-$$ {\rm Fib}(n) =
+$$ {\rmfamily Fib}(n) =
 \begin{cases}
-        \; 0 & {\rm if} \;\; n=0, \\
-	\; 1 & {\rm if} \;\; n=1, \\
-	\; {\rm Fib}(n-1) + {\rm Fib}(n-2) \quad & {\rm otherwise}.
+        \; 0 & {\rmfamily if} \;\; n=0, \\
+	\; 1 & {\rmfamily if} \;\; n=1, \\
+	\; {\rmfamily Fib}(n-1) + {\rmfamily Fib}(n-2) \quad & {\rmfamily otherwise}.
 \end{cases} $$
 @end tex
 We can immediately translate this definition into a recursive procedure for
@@ -3747,17 +3747,17 @@ steps that the algorithm requires to terminate.  The result is true for @math{k 
 to @math{k} and establish the result for @math{k + 1}.  Let @math{(a_{k+1},
 b_{k+1}) \to (a_k, b_k) \to (a_{k-1}, b_{k-1})} be successive pairs in the
 reduction process.  By our
-induction hypotheses, we have @math{b_{k-1} \ge {\rm Fib}(k - 1)} and
-@math{b_k \ge {\rm Fib}(k)}.  Thus, applying the claim we just proved
+induction hypotheses, we have @math{b_{k-1} \ge {\rmfamily Fib}(k - 1)} and
+@math{b_k \ge {\rmfamily Fib}(k)}.  Thus, applying the claim we just proved
 together with the definition of the Fibonacci numbers gives @math{b_{k+1} \ge
-b_k + b_{k-1} \ge {\rm Fib}(k) + {\rm Fib}(k-1) =
-{\rm Fib}(k+1)}, which completes the proof of Lam@'e's Theorem.}
+b_k + b_{k-1} \ge {\rmfamily Fib}(k) + {\rmfamily Fib}(k-1) =
+{\rmfamily Fib}(k+1)}, which completes the proof of Lam@'e's Theorem.}
 @end quotation
 
 @noindent
 We can use this theorem to get an order-of-growth estimate for Euclid's
 Algorithm.  Let @math{n} be the smaller of the two inputs to the procedure.  If
-the process takes @math{k} steps, then we must have @math{n \ge {\rm Fib}(k)
+the process takes @math{k} steps, then we must have @math{n \ge {\rmfamily Fib}(k)
 \approx \varphi^k / \sqrt{5}}.  Therefore the number of steps @math{k}
 grows as the logarithm (to the base @math{\varphi}) of @math{n}.  Hence, the order of
 growth is @math{\Theta(\log n)}.
@@ -5292,7 +5292,7 @@ Dg(x) = ----------------
 
 @end ifinfo
 @tex
-$$ {Dg(x)} = {g(x + {\it dx}) - g(x) \over {\it dx}}\,. $$
+$$ {Dg(x)} = {g(x + {\textit dx}) - g(x) \over {\textit dx}}\,. $$
 @end tex
 @noindent
 Thus, we can express the idea of derivative (taking @math{dx} to be, say,
@@ -5786,15 +5786,15 @@ available as procedures:
 @itemize @bullet
 
 @item
-@math{\hbox{\tt(make-rat}\;\langle{n}\rangle\;\langle{d}\kern0.06em\rangle\hbox{\tt)}} returns the rational number whose numerator is the integer @math{\langle{n}\rangle} and whose denominator is the integer
+@math{\hbox{\ttfamily(make-rat}\;\langle{n}\rangle\;\langle{d}\kern0.06em\rangle\hbox{\ttfamily)}} returns the rational number whose numerator is the integer @math{\langle{n}\rangle} and whose denominator is the integer
 @math{\langle{d}\kern0.06em\rangle}.
 
 @item
-@math{\hbox{\tt(numer}\;\;\langle{x}\rangle\hbox{\tt)}} returns the numerator of the rational number
+@math{\hbox{\ttfamily(numer}\;\;\langle{x}\rangle\hbox{\ttfamily)}} returns the numerator of the rational number
 @math{\langle{x}\rangle}.
 
 @item
-@math{\hbox{\tt(denom}\;\;\langle{x}\rangle\hbox{\tt)}} returns the denominator of the rational number
+@math{\hbox{\ttfamily(denom}\;\;\langle{x}\rangle\hbox{\ttfamily)}} returns the denominator of the rational number
 @math{\langle{x}\rangle}.
 
 @end itemize
@@ -5835,7 +5835,7 @@ d_1   d_2
   {n_1 \over d_1} \cdot {n_2 \over d_2}	&= {n_1 n_2 \over d_1 d_2}, \\
   {n_1 / d_1} \over {n_2 / d_2} 	&= {n_1 d_2 \over d_1 n_2}, \\
   {n_1 \over d_1} 			&= {n_2 \over d_2} \quad
-						{\rm\ if\ and\ only\ if\quad}
+						{\rmfamily\ if\ and\ only\ if\quad}
 						n_1 d_2 = n_2 d_1.
 \end{align*}
 @noindent
@@ -6192,7 +6192,7 @@ if @code{x} is @code{(make-rat n d)}, then
 
 @end ifinfo
 @tex
-$$ {\hbox{\tt(numer x)} \over \hbox{\tt(denom x)}} = {{\tt n} \over {\tt d}}\,.  $$
+$$ {\hbox{\ttfamily(numer x)} \over \hbox{\ttfamily(denom x)}} = {{\ttfamily n} \over {\ttfamily d}}\,.  $$
 @end tex
 In fact, this is the only condition @code{make-rat}, @code{numer}, and
 @code{denom} must fulfill in order to form a suitable basis for a
@@ -7648,7 +7648,7 @@ argument and computes the sum of the squares of the leaves that are odd:
 
 @noindent
 On the surface, this procedure is very different from the following one, which
-constructs a list of all the even Fibonacci numbers @math{{\rm Fib}(k)}, where
+constructs a list of all the even Fibonacci numbers @math{{\rmfamily Fib}(k)}, where
 @math{k} is less than or equal to a given integer @math{n}:
 
 @lisp
@@ -8054,8 +8054,8 @@ of @code{accumulate-n}:
 
 @quotation
 @strong{@anchor{Exercise 2.37}Exercise 2.37:}
-Suppose we represent vectors @math{\hbox{\bf v} = (v_i)} as sequences of numbers, and
-matrices @math{\hbox{\bf m} = (m_{i\!j})} as sequences of vectors (the rows of the
+Suppose we represent vectors @math{\hbox{\bfseries v} = (v_i)} as sequences of numbers, and
+matrices @math{\hbox{\bfseries m} = (m_{i\!j})} as sequences of vectors (the rows of the
 matrix).  For example, the matrix
 @ifinfo
 
@@ -8106,13 +8106,13 @@ any book on matrix algebra) are the following:
 @tex
 $$
 \begin{array}{rl}
-	\hbox{\tt (dot-product v w)} 		& {\rm returns\;the\;sum\;} \Sigma_i v_i w_i; \\
-	\hbox{\tt (matrix-*-vector m v)} 	& {\rm returns\;the\;vector\;} \hbox{\bf t},  \\
-		& {\rm where\;} t_i = \Sigma_{\kern-0.1em j} m_{i\!j} v_{\kern-0.1em j};      \\
-	\hbox{\tt (matrix-*-matrix m n)} 	& {\rm returns\;the\;matrix\;} \hbox{\bf p},  \\
-		& {\rm where\;} p_{i\!j} = \Sigma_k m_{ik} n_{k\!j};                          \\
-	\hbox{\tt (transpose m)} 		& {\rm returns\;the\;matrix\;} \hbox{\bf n},  \\
-		& {\rm where\;} n_{i\!j} = m_{\kern-0.1em ji}.
+	\hbox{\ttfamily (dot-product v w)} 		& {\rmfamily returns\;the\;sum\;} \Sigma_i v_i w_i; \\
+	\hbox{\ttfamily (matrix-*-vector m v)} 	& {\rmfamily returns\;the\;vector\;} \hbox{\bfseries t},  \\
+		& {\rmfamily where\;} t_i = \Sigma_{\kern-0.1em j} m_{i\!j} v_{\kern-0.1em j};      \\
+	\hbox{\ttfamily (matrix-*-matrix m n)} 	& {\rmfamily returns\;the\;matrix\;} \hbox{\bfseries p},  \\
+		& {\rmfamily where\;} p_{i\!j} = \Sigma_k m_{ik} n_{k\!j};                          \\
+	\hbox{\ttfamily (transpose m)} 		& {\rmfamily returns\;the\;matrix\;} \hbox{\bfseries n},  \\
+		& {\rmfamily where\;} n_{i\!j} = m_{\kern-0.1em ji}.
 \end{array}
 $$
 @end tex
@@ -8913,7 +8913,7 @@ vector    \    __--        edge1
 We will use coordinates in the unit square @math{(0 \le x, y \le 1)} to specify
 images.  With each frame, we associate a @newterm{frame coordinate map}, which
 will be used to shift and scale images to fit the frame.  The map transforms
-the unit square into the frame by mapping the vector @math{\hbox{\bf v} = (x, y)} to
+the unit square into the frame by mapping the vector @math{\hbox{\bfseries v} = (x, y)} to
 the vector sum
 @ifinfo
 
@@ -8923,7 +8923,7 @@ Origin(Frame) + x * Edge_1(Frame) + y * Edge_2(Frame)
 
 @end ifinfo
 @tex
-$$ {\rm Origin(Frame)} + x \cdot {\rm Edge_1(Frame)} + y \cdot {\rm Edge_2(Frame)}. $$
+$$ {\rmfamily Origin(Frame)} + x \cdot {\rmfamily Edge_1(Frame)} + y \cdot {\rmfamily Edge_2(Frame)}. $$
 @end tex
 @noindent
 For example, (0, 0) is mapped to the origin of the frame, (1, 1) to the vertex
@@ -8961,7 +8961,7 @@ returns the same vector as
 @end lisp
 
 @quotation
-@strong{@anchor{Exercise 2.46}Exercise 2.46:} A two-dimensional vector @math{\hbox{\bf v}}
+@strong{@anchor{Exercise 2.46}Exercise 2.46:} A two-dimensional vector @math{\hbox{\bfseries v}}
 running from the origin to a point can be represented as a pair consisting of
 an @math{x}-coordinate and a @math{y}-coordinate.  Implement a data abstraction for
 vectors by giving a constructor @code{make-vect} and corresponding selectors
@@ -9555,23 +9555,23 @@ d(uv)     / dv \     / du \
 @end ifinfo
 @tex
 $$
-{{\it dc} \over {\it dx}} 		= 0,
-	\quad {\rm for\ } c\ {\rm a\ constant\ or\ a\ variable\ different\ from\ } x,
+{{\textit dc} \over {\textit dx}} 		= 0,
+	\quad {\rmfamily for\ } c\ {\rmfamily a\ constant\ or\ a\ variable\ different\ from\ } x,
 $$
 @end tex
 @tex
 $$
-{{\it dx} \over {\it dx}} 		= 1,
+{{\textit dx} \over {\textit dx}} 		= 1,
 $$
 @end tex
 @tex
 $$
-{{\it d\,(u + v\,)} \over {\it dx}} 	= {{\it du} \over {\it dx}} + {{\it dv} \over {\it dx}},
+{{\textit d\,(u + v\,)} \over {\textit dx}} 	= {{\textit du} \over {\textit dx}} + {{\textit dv} \over {\textit dx}},
 $$
 @end tex
 @tex
 $$
-{{\it d\,(uv\,)} \over {\it dx}} 	= u {{\it dv} \over {\it dx}} + v {{\it du} \over {\it dx}}.
+{{\textit d\,(uv\,)} \over {\textit dx}} 	= u {{\textit dv} \over {\textit dx}} + v {{\textit du} \over {\textit dx}}.
 $$
 @end tex
 @noindent
@@ -9741,7 +9741,7 @@ d(xy)
 
 @end ifinfo
 @tex
-$$ {{\it d\,(xy\,)} \over {\it dx}} = x \cdot 0 + 1 \cdot y, $$
+$$ {{\textit d\,(xy\,)} \over {\textit dx}} = x \cdot 0 + 1 \cdot y, $$
 @end tex
 @noindent
 but we would like the program to know that @math{x \cdot 0 = 0}, @math{1 \cdot y = y},
@@ -9821,7 +9821,7 @@ d(u^n)            du
 
 @end ifinfo
 @tex
-$$ {{\it d\,(u^n\,)} \over {\it dx}} = nu^{n-1} {{\it du} \over {\it dx}} $$
+$$ {{\textit d\,(u^n\,)} \over {\textit dx}} = nu^{n-1} {{\textit du} \over {\textit dx}} $$
 @end tex
 @noindent
 by adding a new clause to the @code{deriv} program and defining appropriate
@@ -11498,11 +11498,11 @@ To implement this plan, assume that we have two procedures, @code{put} and
 @itemize @bullet
 
 @item
-@math{\hbox{\tt(put}\;\langle}@var{op}@math{\kern0.1em\rangle\;\langle}@var{type}@math{\kern0.08em\rangle\;\langle}@var{item}@math{\kern0.08em\rangle\hbox{\tt)}} installs the @math{\langle}@var{item}@math{\kern0.08em\rangle} in the table, indexed by the
+@math{\hbox{\ttfamily(put}\;\langle}@var{op}@math{\kern0.1em\rangle\;\langle}@var{type}@math{\kern0.08em\rangle\;\langle}@var{item}@math{\kern0.08em\rangle\hbox{\ttfamily)}} installs the @math{\langle}@var{item}@math{\kern0.08em\rangle} in the table, indexed by the
 @math{\langle}@var{op}@math{\kern0.1em\rangle} and the @math{\langle}@var{type}@math{\kern0.08em\rangle}.
 
 @item
-@math{\hbox{\tt(get}\;\langle}@var{op}@math{\kern0.1em\rangle\;\langle}@var{type}@math{\kern0.08em\rangle\hbox{\tt)}} looks up the
+@math{\hbox{\ttfamily(get}\;\langle}@var{op}@math{\kern0.1em\rangle\;\langle}@var{type}@math{\kern0.08em\rangle\hbox{\ttfamily)}} looks up the
 @math{\langle}@var{op}@math{\kern0.08em\rangle}, @math{\langle}@var{type}@math{\kern0.08em\rangle} entry in the table and
 returns the item found there.  If no item is found, @code{get} returns false.
 
@@ -16975,9 +16975,9 @@ itself as a building block in creating more complex circuits.  @ref{Figure 3.26}
 for example, shows a @newterm{full-adder} composed of two half-adders
 and an or-gate.@footnote{A full-adder is a basic circuit element used in adding
 two binary numbers.  Here A and B are the bits at corresponding positions in
-the two numbers to be added, and @math{\rm C_{in}} is the carry bit from the
+the two numbers to be added, and @math{\rmfamily C_{in}} is the carry bit from the
 addition one place to the right.  The circuit generates SUM, which is the sum
-bit in the corresponding position, and @math{\rm C_{out}}, which is the carry
+bit in the corresponding position, and @math{\rmfamily C_{out}}, which is the carry
 bit to be propagated to the left.} We can construct a full-adder as follows:
 
 @lisp
@@ -17264,22 +17264,22 @@ for agendas:
 @code{(make-agenda)} returns a new empty agenda.
 
 @item
-@code{(empty-agenda?}@math{\;\;\langle\kern0.08em\hbox{\ttfamily\slshape agenda}\kern0.06em\rangle\hbox{\tt)}} is true if the specified agenda is
+@code{(empty-agenda?}@math{\;\;\langle\kern0.08em\hbox{\ttfamily\slshape agenda}\kern0.06em\rangle\hbox{\ttfamily)}} is true if the specified agenda is
 empty.
 
 @item
-@code{(first-agenda-item}@math{\;\;\langle\kern0.08em\hbox{\ttfamily\slshape agenda}\kern0.06em\rangle\hbox{\tt)}} returns the first item on the
+@code{(first-agenda-item}@math{\;\;\langle\kern0.08em\hbox{\ttfamily\slshape agenda}\kern0.06em\rangle\hbox{\ttfamily)}} returns the first item on the
 agenda.
 
 @item
-@code{(remove-first-agenda-item!}@math{\;\langle\kern0.08em\hbox{\ttfamily\slshape agenda}\kern0.06em\rangle\hbox{\tt)}} modifies the agenda by
+@code{(remove-first-agenda-item!}@math{\;\langle\kern0.08em\hbox{\ttfamily\slshape agenda}\kern0.06em\rangle\hbox{\ttfamily)}} modifies the agenda by
 removing the first item.
 
 @item
-@code{(add-to-agenda!}@math{\;\;\langle\kern0.03em\hbox{\ttfamily\slshape time}\kern0.06em\rangle\;\;\langle\kern0.08em\hbox{\ttfamily\slshape action}\kern0.06em\rangle\;\;\langle\kern0.08em\hbox{\ttfamily\slshape agenda}\kern0.06em\rangle\hbox{\tt)}} modifies the agenda by adding the given action procedure to be run at the specified time.
+@code{(add-to-agenda!}@math{\;\;\langle\kern0.03em\hbox{\ttfamily\slshape time}\kern0.06em\rangle\;\;\langle\kern0.08em\hbox{\ttfamily\slshape action}\kern0.06em\rangle\;\;\langle\kern0.08em\hbox{\ttfamily\slshape agenda}\kern0.06em\rangle\hbox{\ttfamily)}} modifies the agenda by adding the given action procedure to be run at the specified time.
 
 @item
-@code{(current-time}@math{\;\;\langle\kern0.08em\hbox{\ttfamily\slshape agenda}\kern0.04em\rangle\hbox{\tt)}} returns the current simulation time.
+@code{(current-time}@math{\;\;\langle\kern0.08em\hbox{\ttfamily\slshape agenda}\kern0.04em\rangle\hbox{\ttfamily)}} returns the current simulation time.
 
 @end itemize
 
@@ -30272,7 +30272,7 @@ Just as with factorial, we can implement the recursive Fibonacci computation as
 a register machine with registers @code{n}, @code{val}, and @code{continue}.
 The machine is more complex than the one for factorial, because there are two
 places in the controller sequence where we need to perform recursive
-calls---once to compute @math{{\rm Fib}(n - 1)} and once to compute @math{{\rm Fib}(n - 2)}.  To
+calls---once to compute @math{{\rmfamily Fib}(n - 1)} and once to compute @math{{\rmfamily Fib}(n - 2)}.  To
 set up for each of these calls, we save the registers whose values will be
 needed later, set the @code{n} register to the number whose Fib we need to
 compute recursively (@math{n - 1} or @math{n - 2}), and assign to @code{continue} the
@@ -33174,19 +33174,19 @@ the tree-recursive Fibonacci computation:
 
 @item
 Give a formula in terms of @math{n} for the maximum depth of the stack required to
-compute @math{{\rm Fib}(n)} for @math{n \ge 2}.  Hint: In @ref{Section 1.2.2} we
+compute @math{{\rmfamily Fib}(n)} for @math{n \ge 2}.  Hint: In @ref{Section 1.2.2} we
 argued that the space used by this process grows linearly with @math{n}.
 
 @item
-Give a formula for the total number of pushes used to compute @math{{\rm Fib}(n)}
+Give a formula for the total number of pushes used to compute @math{{\rmfamily Fib}(n)}
 for @math{n \ge 2}.  You should find that the number of pushes (which correlates
 well with the time used) grows exponentially with @math{n}.  Hint: Let
-@math{S(n)} be the number of pushes used in computing @math{{\rm Fib}(n)}.  You
+@math{S(n)} be the number of pushes used in computing @math{{\rmfamily Fib}(n)}.  You
 should be able to argue that there is a formula that expresses @math{S(n)} in
 terms of @math{S(n - 1)}, @math{S(n - 2)}, and some fixed ``overhead''
 constant @math{k} that is independent of @math{n}.  Give the formula, and say what
 @math{k} is.  Then show that @math{S(n)} can be expressed as
-@math{a\cdot{\rm Fib}(n + 1) + b} and give the values of @math{a} and @math{b}.
+@math{a\cdot{\rmfamily Fib}(n + 1) + b} and give the values of @math{a} and @math{b}.
 
 @end enumerate
 @end quotation
@@ -33569,25 +33569,25 @@ $$\vbox{
 	\kern0.8em # \kern0.4em \hfil \cr
 
   $\langle{\mathit{seq}_1}\rangle$
-& \hbox{\tt (save} $\langle{\mathit{reg}_1}\rangle${\tt)}
-& \hbox{\tt (save} $\langle{\mathit{reg}_2}\rangle${\tt)}
-& \hbox{\tt (save} $\langle{\mathit{reg}_2}\rangle${\tt)} \cr
+& \hbox{\ttfamily (save} $\langle{\mathit{reg}_1}\rangle${\ttfamily)}
+& \hbox{\ttfamily (save} $\langle{\mathit{reg}_2}\rangle${\ttfamily)}
+& \hbox{\ttfamily (save} $\langle{\mathit{reg}_2}\rangle${\ttfamily)} \cr
 
   $\langle{\mathit{seq}_2}\rangle$
 & $\langle{\mathit{seq}_1}\rangle$
 & $\langle{\mathit{seq}_1}\rangle$
-& \hbox{\tt (save} $\langle{\mathit{reg}_1}\rangle${\tt)} \cr
+& \hbox{\ttfamily (save} $\langle{\mathit{reg}_1}\rangle${\ttfamily)} \cr
 
-& \hbox{\tt (restore} $\langle{\mathit{reg}_1}\rangle${\tt)}
-& \hbox{\tt (restore} $\langle{\mathit{reg}_2}\rangle${\tt)}
+& \hbox{\ttfamily (restore} $\langle{\mathit{reg}_1}\rangle${\ttfamily)}
+& \hbox{\ttfamily (restore} $\langle{\mathit{reg}_2}\rangle${\ttfamily)}
 & $\langle{\mathit{seq}_1}\rangle$ \cr
 
 & $\langle{\mathit{seq}_2}\rangle$
 & $\langle{\mathit{seq}_2}\rangle$
-& \hbox{\tt (restore} $\langle{\mathit{reg}_1}\rangle${\tt)} \cr
+& \hbox{\ttfamily (restore} $\langle{\mathit{reg}_1}\rangle${\ttfamily)} \cr
 
 &  &
-& \hbox{\tt (restore} $\langle{\mathit{reg}_2}\rangle${\tt)} \cr
+& \hbox{\ttfamily (restore} $\langle{\mathit{reg}_2}\rangle${\ttfamily)} \cr
 
 &  &
 & $\langle{\mathit{seq}_2}\rangle$ \cr
@@ -36191,7 +36191,7 @@ lambda: The ultimate software tool.  In @cite{Conference Record of the 1982
 @acronym{ACM} Symposium on Lisp and Functional Programming}, pp.  114-122.
 @url{http://people.csail.mit.edu/riastradh/t/adams82t.pdf, –›}
 
-@b{Rees}, Jonathan, and William Clinger (eds). 1991.  The @math{\rm revised^4} report on the
+@b{Rees}, Jonathan, and William Clinger (eds). 1991.  The @math{\rmfamily revised^4} report on the
 algorithmic language Scheme.  @cite{Lisp Pointers}, 4(3).
 @url{http://people.csail.mit.edu/jaffer/r4rs.pdf, –›}
 
