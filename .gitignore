@@ -1,0 +1,9 @@
+sicp.pdf
+src/**/*.pdf
+src/creationdate.*
+src/pdfa.xmpi
+src/*.tex
+src/*.fls
+src/*.xdv
+!src/preamble.tex
+!src/postamble.tex
